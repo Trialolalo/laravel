@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+body{
+    background-color: lightblue;
+}
+
+.burger-menu {
+
+}
+
+.filter {
+    background-color: white;
+}
+
+.tables {
+
+}
+
+.tables-selector{
+    
+}
+
+.tables-edit{
+    background-color: royalblue;
+}
+
+.tables-info{
+    background-color: cornflowerblue;
+}
+
+.form{
+
+}
+
+label{
+    color: white;
+}
+
+
+
