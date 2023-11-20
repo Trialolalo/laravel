@@ -26,10 +26,13 @@
       <meta property="og:description" content="descripción de la web, se recomienda 90 caracteres" />
       <meta property="og:image"       content="https://www.youtube.com/s/desktop/12d6b690/img/favicon_144.png" />
       
-        <!-- Establecemos las tipografías que usaremos -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+       <!-- Establecemos las tipografías que usaremos -->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
       <!-- Enlazamos con la página de CSS -->
       <link rel="stylesheet" href="style.css">
@@ -39,126 +42,152 @@
     </head>
 
 
-            <body>
-                <header>
+        <body>
+            <header>
+
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2V3H12V9H11V10H9V11H8V12H7V13H5V12H4V11H3V9H2V15H3V16H4V17H5V18H6V22H8V21H7V20H8V19H9V18H10V19H11V22H13V21H12V17H13V16H14V15H15V12H16V13H17V11H15V9H20V8H17V7H22V3H21V2M14 3H15V4H14Z" /></svg>
+                </div>
+
+                <div class="burger-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+                </div>
+
+            </header>
+
+            <div class="filter">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>filter-menu</title><path d="M11 11L16.76 3.62A1 1 0 0 0 16.59 2.22A1 1 0 0 0 16 2H2A1 1 0 0 0 1.38 2.22A1 1 0 0 0 1.21 3.62L7 11V16.87A1 1 0 0 0 7.29 17.7L9.29 19.7A1 1 0 0 0 10.7 19.7A1 1 0 0 0 11 18.87V11M13 16L18 21L23 16Z" /></svg>
+            </div>
+
+            <main>
+                <div class="tables">
+                    <div>
+                        <div class="table-top">
+                            <div class="table-edit">
+                                <div class="pencil">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                                </div>
+                                <div class="trash">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-info">
+                            <ul>
+                                <li>Email:</li>
+                                <li>Nombre:</li>
+                                <li>Apellidos:</li>
+                            </ul>
+                        </div>
+                    </div>
 
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>google-downasaur</title><path d="M13 2V3H12V9H11V10H9V11H8V12H7V13H5V12H4V11H3V9H2V15H3V16H4V17H5V18H6V22H8V21H7V20H8V19H9V18H10V19H11V22H13V21H12V17H13V16H14V15H15V12H16V13H17V11H15V9H20V8H17V7H22V3H21V2M14 3H15V4H14Z" /></svg>
-                    </div>
-
-                    <div class="burger-menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>menu</title><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
-                    </div>
-
-                </header>
-
-                <main>
-
-                    <div class="filter">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>filter-menu</title><path d="M11 11L16.76 3.62A1 1 0 0 0 16.59 2.22A1 1 0 0 0 16 2H2A1 1 0 0 0 1.38 2.22A1 1 0 0 0 1.21 3.62L7 11V16.87A1 1 0 0 0 7.29 17.7L9.29 19.7A1 1 0 0 0 10.7 19.7A1 1 0 0 0 11 18.87V11M13 16L18 21L23 16Z" /></svg>
-                    </div>
-                    
-                    <div class="tables">
-
-                        <div>
-
-                            <div class="tables-selector">
-                                
-                            </div>
-
+                        <div class="table-top">
                             <div class="table-edit">
-                                <div>
+                                <div class="pencil">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                                 </div>
-
-                                <div>
+                                <div class="trash">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
                                 </div>
                             </div>
-
-                            <div class="table-info">
-                                <ul>
-                                    <li>Email:</li>
-                                    <li>Nombre:</li>
-                                    <li>Apellidos:</li>
-                                </ul>
+                        </div>
+                        <div class="table-info">
+                            <ul>
+                                <li>Email:</li>
+                                <li>Nombre:</li>
+                                <li>Apellidos:</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="table-top">
+                            <div class="table-edit">
+                                <div class="pencil">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                                </div>
+                                <div class="trash">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
+                                </div>
                             </div>
                         </div>
-
-                        <div>
+                        <div class="table-info">
+                            <ul>
+                                <li>Email:</li>
+                                <li>Nombre:</li>
+                                <li>Apellidos:</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="table-top">
                             <div class="table-edit">
-                                <div>
+                                <div class="pencil">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                                 </div>
-
-                                <div>
+                                <div class="trash">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
                                 </div>
                             </div>
+                        </div>
+                        <div class="table-info">
+                            <ul>
+                                <li>Email:</li>
+                                <li>Nombre:</li>
+                                <li>Apellidos:</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="table-info">
-                                <ul>
-                                    <li>Email:</li>
-                                    <li>Nombre:</li>
-                                    <li>Apellidos:</li>
-                                </ul>
+                <form action=""> 
+                    <div class="form-row">
+                        <div class="form-element">
+                            <div class="form-element-label">
+                                <label>
+                                    Nombre
+                                </label>
+                            </div>
+                            <div class="form-element-input">
+                                <input name="submitted-name" autocomplete="name" />
                             </div>
                         </div>
-
-                        <div>
-                            <div class="table-edit">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
-                                </div>
-
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
-                                </div>
+    
+                        <div class="form-element">
+                            <div class="form-element-label">
+                                <label>
+                                    Email
+                                </label>
                             </div>
-
-                            <div class="table-info">
-                                <ul>
-                                    <li>Email:</li>
-                                    <li>Nombre:</li>
-                                    <li>Apellidos:</li>
-                                </ul>
+                            <div class="form-element-input">
+                                <input name="submitted-name" autocomplete="name" />
                             </div>
                         </div>
-
                     </div>
 
-                    <div class="form">
-
-                        <form action=""> 
-                            <div>
+                    <div class="form-row">
+                        <div class="form-element">
+                            <div class="form-element-label">
                                 <label>
-                                    Nombre:
-                                    <input name="submitted-name" autocomplete="name" />
+                                    Password
                                 </label>
                             </div>
-
-                            <div>
+                            <div class="form-element-input">
+                                <input name="submitted-name" autocomplete="name" />
+                            </div>
+                        </div>
+    
+                        <div class="form-element">
+                            <div class="form-element-label">
                                 <label>
-                                    Apellidos:
-                                    <input name="submitted-surname" autocomplete="surname" />
+                                    Confirm Password
                                 </label>
                             </div>
-
-                            <div>
-                                <label>
-                                    Email:
-                                    <input name="submitted-email" autocomplete="email" />
-                                </label>
+                            <div class="form-element-input">
+                                <input name="submitted-name" autocomplete="name" />
                             </div>
-
-                            <div>
-                                <label>
-                                    Teléfono:
-                                    <input name="submitted-phone" autocomplete="phone" />
-                                </label>
-                            </div>
-                        </form>
-
+                        </div>
                     </div>
-                </main>
-            </body>
+                </form>
+            </main>
+        </body>
