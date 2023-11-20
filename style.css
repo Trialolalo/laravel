@@ -3,17 +3,17 @@
     padding: 0;
 }
 
-
 body{
     background-color: hsl(195, 50%, 79%);
 }
-
 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 9rem;
 }
 
 .logo{
@@ -24,10 +24,6 @@ header{
 .logo svg{
     fill: hsl(0, 0%, 100%);
     width: 3rem;
-}
-
-.burger-menu {
-
 }
 
 .burger-menu svg{
@@ -104,10 +100,6 @@ form{
     width: 70%;
 }
 
-.form-element{
-    
-}
-
 .form-element-label{
     width: 98.5%;
     background-color: hsl(225, 54%, 33%);
@@ -130,12 +122,31 @@ label{
 }
 
 input{
-    width: 96%;
-    height: 80%;
+    box-sizing: border-box;
+    width: 100%;
     border: none;
     padding: 0.5rem;
     outline: auto;
 }
 
+.form-save{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0.25rem;
+}
+
+button .form-save{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0.25rem;
+}
+
+.form-save svg{
+    width: 3rem;
+    height: 3rem;
+    fill: hsl(219, 79%, 66%);
+}
 
 
