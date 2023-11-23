@@ -5,15 +5,31 @@
 
 body{
     background-color: hsl(195, 50%, 79%);
+    margin: 0 auto;
+    width: 80%;
 }
 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
-    padding-left: 2rem;
-    padding-right: 9rem;
+    padding: 2rem 0;
+}
+
+.menu{
+    background: hsl(0, 79%, 34%);
+    z-index: 1000;
+    height: -100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 2s;
+}
+
+.menu .active{
+    height: 100vh;
+    bottom: 50%;
 }
 
 .logo{
@@ -27,11 +43,11 @@ header{
 }
 
 .burger-menu svg{
-    fill: hsl(0, 0%, 100%);
+    fill: hsl(219, 79%, 66%);
     width: 3rem;
 }
 
-main{
+.container{
     display: flex;
     gap: 3rem;
 }
@@ -42,6 +58,7 @@ main{
     align-items: center;
     justify-content: space-around;
     padding: 0.5rem;
+    margin-bottom: 2rem;
 }
 
 .filter svg{
@@ -50,8 +67,7 @@ main{
 }
 
 .tables{
-    width: 25%;
-    margin: 2rem;
+    flex: 1;
 }
 
 .table-top{
@@ -88,28 +104,30 @@ main{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-form{
-    width: 60%;
-    height: 80%;
-    display: flex;
-    gap: 2rem;
-    padding: 2rem;
+.form{
+    flex: 2;
+}
+
+.form-buttons{
+    margin-bottom: 2rem;
 }
 
 .form-row{
-    width: 70%;
+    display: flex;
+    gap: 1rem;
+}
+
+.form-element{
+    flex: 1;
 }
 
 .form-element-label{
-    width: 98.5%;
     background-color: hsl(225, 54%, 33%);
     padding: 0.2rem;
 }
 
 label{
     color: hsl(0, 0%, 100%);
-    width: 80%;
-    height: 80%;
     font-size: large;
     border: none;
     padding: 1rem;
@@ -121,12 +139,18 @@ label{
     background-color: hsl(0, 0%, 100%);
 }
 
-input{
-    box-sizing: border-box;
+.form-element-input textarea{
+    background-color: hsl(0, 0%, 100%);
     width: 100%;
     border: none;
+}
+
+input{
+    box-sizing: border-box;
     padding: 0.5rem;
     outline: auto;
+    width: 100%;
+    height: 2rem;
 }
 
 .form-save{
