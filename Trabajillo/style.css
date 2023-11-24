@@ -16,20 +16,37 @@ header{
     padding: 2rem 0;
 }
 
-.menu{
-    background: hsl(0, 79%, 34%);
-    z-index: 1000;
-    height: -100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transition: all 2s;
+button{
+    background: none;
+    border: none;
 }
 
-.menu .active{
+.menu{
+    background: hsl(0, 79%, 34%);
     height: 100vh;
-    bottom: 50%;
+    width: auto;
+    left: 0;
+    position: fixed;
+    transition: top 1s;
+    top: -100vh;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu.active{
+    top: 0;
+}
+
+.menu-button{
+    position: relative;
+    z-index: 1001;
+    width: 100%;
+    border: none;
+    background: none;
+}
+
+.menu-button.active{
+    z-index: 1001;
 }
 
 .logo{
@@ -39,13 +56,150 @@ header{
 
 .logo svg{
     fill: hsl(0, 0%, 100%);
-    width: 3rem;
+    width: 5rem;
 }
 
-.burger-menu svg{
-    fill: hsl(219, 79%, 66%);
-    width: 3rem;
+.burger-menu{
+    width: 5%;
 }
+
+
+.box {
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    cursor: pointer;
+  }
+  
+  .btn span {
+    display: block;
+    width: 80%;
+    height: 8px;
+    background: hsl(0, 0%, 100%);
+    transition: all .3s;
+    position: relative;
+  }
+  
+  .btn span + span {
+    margin-top: 14px;
+  }
+  
+  .active .btn span:nth-child(1) {
+    animation: ease .7s top forwards;
+  }
+  
+  .btn span:nth-child(1) {
+    animation: ease .7s top-2 forwards;
+  }
+  
+  .active .btn span:nth-child(2) {
+    animation: ease .7s scaled forwards;
+  }
+  
+  .btn span:nth-child(2) {
+    animation: ease .7s scaled-2 forwards;
+  }
+  
+  .active .btn span:nth-child(3) {
+    animation: ease .7s bottom forwards;
+  }
+  
+  .not-active .btn span:nth-child(3) {
+    animation: ease .7s bottom-2 forwards;
+  }
+  
+  @keyframes top {
+    0% {
+      top: 0;
+      transform: rotate(0);
+    }
+    50% {
+      top: 22px;
+      transform: rotate(0);
+    }
+    100% {
+      top: 22px;
+      transform: rotate(45deg);
+    }
+  }
+  
+  @keyframes top-2 {
+    0% {
+      top: 22px;
+      transform: rotate(45deg);
+    }
+    50% {
+      top: 22px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 0;
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes bottom {
+    0% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+    50% {
+      bottom: 22px;
+      transform: rotate(0);
+    }
+    100% {
+      bottom: 22px;
+      transform: rotate(135deg);
+    }
+  }
+  
+  @keyframes bottom-2 {
+    0% {
+      bottom: 22px;
+      transform: rotate(135deg);
+    }
+    50% {
+      bottom: 22px;
+      transform: rotate(0);
+    }
+    100% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+  }
+  
+  @keyframes scaled {
+    50% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  
+  @keyframes scaled-2 {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
 
 .container{
     display: flex;
@@ -58,12 +212,59 @@ header{
     align-items: center;
     justify-content: space-around;
     padding: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    flex-direction: column;
+}
+
+.filter-slide{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-slide.active{
+    fill: hsl(225, 54%, 33%);
+}
+
+.filter-menu.active{
+    height: 15vh;
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: all 0.35s;
+
+}
+
+.filter-menu{
+    top: 0;
+    transform: scaleY(1);
+    height: 0;
+    transition: all 0.35s;
 }
 
 .filter svg{
     fill: hsl(219, 79%, 66%);
     width: 2rem;
+}
+
+.filter-form{
+    width: auto;
+    overflow: hidden;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 200ms ease-in, visibility 0ms ease-in 200ms;
+}
+
+.filter-form.active{
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    overflow: visible;
+    margin: 2rem;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 200ms ease-in, visibility 0ms ease-in 0ms;
 }
 
 .tables{
@@ -79,16 +280,27 @@ header{
     justify-content: flex-end;
 }
 
-.table-top .table-edit .pencil svg{
+.pencil svg{
     width: 2rem;
     height: 2rem;
     fill: hsl(0, 0%, 100%);
+    cursor: pointer;
 }
 
-.table-top .table-edit .trash svg{
+.pencil svg:hover{
+    fill: hsl(88, 67%, 62%);
+}
+
+
+.trash svg{
     width: 2rem;
     height: 2rem;
     fill: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.trash svg:hover{
+    fill: hsl(0, 77%, 66%);
 }
 
 .table-info{
@@ -153,24 +365,54 @@ input{
     height: 2rem;
 }
 
-.form-save{
-    width: 100%;
-    box-sizing: border-box;
+.tabs{
+    display: flex;
     background-color: hsl(0, 0%, 100%);
-    border-radius: 0.25rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
-button .form-save{
-    width: 100%;
-    box-sizing: border-box;
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 0.25rem;
+.tab-selector{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
 }
 
-.form-save svg{
-    width: 3rem;
-    height: 3rem;
+.tab{
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(225, 54%, 33%);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+  
+  .form-clean-button button,
+  .form-save-button button {
+    border: none;
+    background: none;
+  }
+
+  .form-clean-button button svg,
+  .form-save-button button svg {
+    width: 2rem;
+  }
+  
+  .form-clean-button button svg path,
+  .form-save-button button svg path {
     fill: hsl(219, 79%, 66%);
-}
+  }
+  
+  .form-clean-button button:hover svg path,
+  .form-save-button button:hover svg path {
+    fill: hsl(225, 54%, 33%);
+  }
 
 
