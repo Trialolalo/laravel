@@ -223,38 +223,68 @@ button{
   width: 2rem;
 }
 
-.filter-menu.active{
+
+.filter-modal{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    opacity: 1;
-    z-index: 1002;
-    background-color: hsla(0, 0%, 14%, 0.473);
-    overflow: visible;
-    visibility: visible;
-    position: absolute;
+    background-color: hsla(0, 0%, 14%, 0.555);
+    visibility: hidden;
+    position: fixed;
     height: 100vh;
-    transition: opacity 200ms ease-in, visibility 0ms ease-in 0ms;
-}
-
-.filter-menu{
+    width: 100%;
+    left: 0;
+    top: 0;
     opacity: 0.5;
     overflow: hidden;
-    visibility: hidden;
-    height: 0;
+    transition: opacity 200ms ease-in, visibility 0ms ease-in 0ms;
+    z-index: 1002;
+}
+
+.filter-modal.active{
+    opacity: 1;
+    visibility: visible;
 }
 
 .filter-form{
-    overflow: hidden;
-    visibility: hidden;
-    height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: hsl(195, 50%, 79%);
     padding: 1rem;
 }
 
-.filter-form.active{
-    overflow: visible;
-    visibility: visible;
+.filter-form .form-row{
+    justify-content: space-between;
+}
+
+.filter-form h3{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.button-filter button{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    background-color: hsl(88, 67%, 62%);
+    padding: 1rem;
+    cursor: pointer;
+    width: 9rem;
+}
+
+.button-cancel button{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    background-color: hsl(0, 77%, 66%);
+    padding: 1rem;
+    cursor: pointer;
+    width: 9rem;
 }
 
 .tables{
