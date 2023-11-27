@@ -207,13 +207,9 @@ button{
 }
 
 .filter {
-    display: flex;
     background-color: hsl(0, 0%, 100%);
-    align-items: center;
-    justify-content: space-around;
     padding: 0.5rem;
     margin-bottom: 1rem;
-    flex-direction: column;
 }
 
 .filter-slide{
@@ -222,49 +218,43 @@ button{
     cursor: pointer;
 }
 
-.filter-slide.active{
-    fill: hsl(225, 54%, 33%);
+.filter svg{
+  fill: hsl(219, 79%, 66%);
+  width: 2rem;
 }
 
 .filter-menu.active{
-    height: 15vh;
-    position: relative;
-    width: 100%;
-    margin-bottom: 1rem;
-    transition: all 0.35s;
-
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    z-index: 1002;
+    background-color: hsla(0, 0%, 14%, 0.473);
+    overflow: visible;
+    visibility: visible;
+    position: absolute;
+    height: 100vh;
+    transition: opacity 200ms ease-in, visibility 0ms ease-in 0ms;
 }
 
 .filter-menu{
-    top: 0;
-    transform: scaleY(1);
+    opacity: 0.5;
+    overflow: hidden;
+    visibility: hidden;
     height: 0;
-    transition: all 0.35s;
-}
-
-.filter svg{
-    fill: hsl(219, 79%, 66%);
-    width: 2rem;
 }
 
 .filter-form{
-    width: auto;
     overflow: hidden;
-    height: 0;
     visibility: hidden;
-    opacity: 0;
-    transition: opacity 200ms ease-in, visibility 0ms ease-in 200ms;
+    height: 0;
+    padding: 1rem;
 }
 
 .filter-form.active{
-    justify-content: space-between;
-    align-items: center;
-    width: auto;
     overflow: visible;
-    margin: 2rem;
     visibility: visible;
-    opacity: 1;
-    transition: opacity 200ms ease-in, visibility 0ms ease-in 0ms;
 }
 
 .tables{

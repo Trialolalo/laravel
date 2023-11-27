@@ -1,0 +1,23 @@
+.tabs{
+    display: flex;
+    background-color: hsl(0, 0%, 100%);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tab-selector{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.tab{
+    color: hsl(0, 0%, 100%);
+    background-color: $primary-color;
+    font-family: $font-stack-condensed;
+    font-size: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+

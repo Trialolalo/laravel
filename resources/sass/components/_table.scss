@@ -1,0 +1,48 @@
+.tables{
+    flex: 1;
+}
+
+.table-top{
+    background-color: $primary-color;
+}
+
+.table-edit{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pencil svg{
+    width: 2rem;
+    height: 2rem;
+    fill: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.pencil svg:hover{
+    fill: $affirmative-color;
+}
+
+
+.trash svg{
+    width: 2rem;
+    height: 2rem;
+    fill: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.trash svg:hover{
+    fill: $negative-color;
+}
+
+.table-info{
+    background-color: hsl(0, 0%, 100%);
+}
+
+.table-info ul{
+    list-style: none;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: hsl(0, 0%, 15%);
+    font-family: $font-stack-condensed;
+}

@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('welcome', ['name' => 'Nuria']);
 });
 
-Route::get('/admin/users', function () {
+Route::get('/admin/usuarios', function () {
     return view('admin.users.index');
 });
 
-Route::get('/admin/events', function () {
+Route::get('/admin/eventos', function () {
     return view('admin.events.index');
 });
