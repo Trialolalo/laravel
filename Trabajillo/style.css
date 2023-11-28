@@ -458,7 +458,7 @@ input{
     width: 100%;
 }
 
-.tab{
+.tab-principal{
     color: hsl(0, 0%, 100%);
     background-color: hsl(225, 54%, 33%);
     font-family: 'Roboto Condensed', sans-serif;
@@ -467,6 +467,14 @@ input{
     height: 100%;
     cursor: pointer;
     box-sizing: border-box;
+}
+
+.tab-imagenes{
+    background: transparent;
+    color: hsl(0, 0%, 0%);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .form-buttons {
