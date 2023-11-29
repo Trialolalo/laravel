@@ -1,22 +1,14 @@
 export default (() => {
-    const tabPrincipal = document.querySelector(".tab-principal");
-    const tabImages = document.querySelector(".tab-images")
+    const tabSelector = document.querySelector(".tab-selector")
     
-    tabPrincipal.addEventListener('click', async (event) => {
-        if (event.target.closest('.tab-principal')) {
-            tabPrincipal.classList.add('active')
-            tabImages.classList.remove('active')
+    tabSelector.addEventListener('click', async (event) => {
+
+        if (event.target.closest('.tab')) {
+            const tab = event.target.closest('.tab');
+            tab.classList.remove('active');
+            tab.classList.add('active');
         }
     });
-
-    tabImages.addEventListener('click', async (event) => {
-        if (event.target.closest('.tab-images')){
-            tabPrincipal.classList.remove('active')
-            tabImages.classList.add('active')
-        }
-    });
-
-   
 
    
 })();
