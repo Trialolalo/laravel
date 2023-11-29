@@ -1,14 +1,22 @@
 export default (() => {
-
-    const filterSlide = document.querySelector(".filter-slide");
+    const tabPrincipal = document.querySelector(".tab-principal");
+    const tabImages = document.querySelector(".tab-images")
     
-     
-    filterSlide.addEventListener('click', async (event) => {
-
-        filterModal.classList.toggle("tab-imagenes");
-
+    tabPrincipal.addEventListener('click', async (event) => {
+        if (event.target.closest('.tab-principal')) {
+            tabPrincipal.classList.add('active')
+            tabImages.classList.remove('active')
+        }
     });
 
+    tabImages.addEventListener('click', async (event) => {
+        if (event.target.closest('.tab-images')){
+            tabPrincipal.classList.remove('active')
+            tabImages.classList.add('active')
+        }
+    });
+
+   
 
    
 })();

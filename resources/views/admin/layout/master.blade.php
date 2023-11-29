@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
     <head>
       <!-- Codificación de carácteres con los que vamos a escribir la página -->
       <meta charset="utf-8">
@@ -36,8 +36,6 @@
 
       <!-- Enlazamos con la página de CSS -->
       @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-      <!-- Enlazamos con la página de JS -->
       
     </head>
 

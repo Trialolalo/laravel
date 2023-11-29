@@ -288,6 +288,15 @@ button{
     flex: 1;
 }
 
+.table-registers{
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.table-registers::-webkit-scrollbar::-ms-thumb{
+  display: none;
+}
+
 .table-top{
     background-color: hsl(225, 54%, 33%);
 }
@@ -444,7 +453,6 @@ input{
     display: flex;
     background-color: hsl(0, 0%, 100%);
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     margin-bottom: 1rem;
 }
@@ -465,15 +473,15 @@ input{
     font-size: 1rem;
     padding: 1rem;
     height: 100%;
-    cursor: pointer;
     box-sizing: border-box;
 }
 
-.tab-imagenes{
+.tab-images{
     background: transparent;
     color: hsl(0, 0%, 0%);
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 1rem;
+    cursor: pointer;
     font-weight: 700;
 }
 

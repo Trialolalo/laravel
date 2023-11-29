@@ -63,6 +63,25 @@
         </header>
 
         <main>
+            <div class="trash-modal">
+                <div class="trash-window">
+                    <h3>
+                        ¿Quiere eliminar el registro?
+                    </h3>
+                    <div class="form-row">
+                        <div class="button-confirmation">
+                            <button>
+                                Si
+                            </button>
+                        </div>
+                        <div class="button-cancelation">
+                            <button>
+                                No
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
             <div class="container">
                 <div class="tables">
                     <div class="filter">
@@ -70,7 +89,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>filter-menu</title><path d="M11 11L16.76 3.62A1 1 0 0 0 16.59 2.22A1 1 0 0 0 16 2H2A1 1 0 0 0 1.38 2.22A1 1 0 0 0 1.21 3.62L7 11V16.87A1 1 0 0 0 7.29 17.7L9.29 19.7A1 1 0 0 0 10.7 19.7A1 1 0 0 0 11 18.87V11M13 16L18 21L23 16Z" /></svg>
                         </button>
                         <div class="filter-modal">
-                            <div class="filter-form">
+                            <form class="filter-form">
                                 <h3>
                                     Filtraje de tabla
                                 </h3>
@@ -107,7 +126,7 @@
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>  
                     </div>
                     <div class="table-register">
@@ -122,26 +141,7 @@
                                     <button class="trash-slide">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
                                     </button>
-                                </div>
-                                <div class="trash-modal">
-                                    <div class="trash-window">
-                                        <h3>
-                                            ¿Quiere eliminar el registro?
-                                        </h3>
-                                        <div class="form-row">
-                                            <div class="button-confirmation">
-                                                <button>
-                                                    Si
-                                                </button>
-                                            </div>
-                                            <div class="button-cancelation">
-                                                <button>
-                                                    No
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                              
+                                </div>                  
                             </div>
                         </div>
                         <div class="table-info">
@@ -220,12 +220,16 @@
                 <section class="form">
                     <div class="tabs">
                         <div class="tab-selector">
-                            <button class="tab-principal">
-                                Principal
-                            </button>             
-                            <button class="tab-imagenes">
-                                Imágenes
-                            </button>
+                            <div class="tab-principal">
+                                <button>
+                                    Principal
+                                </button>
+                            </div>
+                            <div class="tab-images">            
+                                <button>
+                                    Imágenes
+                                </button>
+                            </div> 
                         </div>
                         <div class="form-buttons">
                             <div class="form-clean-button">

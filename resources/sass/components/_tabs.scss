@@ -2,22 +2,64 @@
     display: flex;
     background-color: hsl(0, 0%, 100%);
     justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .tab-selector{
     display: flex;
     justify-content: flex-start;
     gap: 0.5rem;
+    box-sizing: border-box;
+    align-items: center;
+    width: 100%;
 }
 
-.tab{
+.tab-principal{
     color: hsl(0, 0%, 100%);
-    background-color: $primary-color;
-    font-family: $font-stack-condensed;
+    background-color: hsl(225, 54%, 33%);
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: 1rem;
+    height: 100%;
     cursor: pointer;
     box-sizing: border-box;
 }
+
+.tab-imagenes{
+    background: transparent;
+    color: hsl(0, 0%, 0%);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  
+  .form-clean-button button,
+  .form-save-button button {
+    border: none;
+    background: none;
+  }
+
+  .form-clean-button button svg,
+  .form-save-button button svg {
+    width: 2rem;
+  }
+  
+  .form-clean-button button svg path,
+  .form-save-button button svg path {
+    fill: hsl(219, 79%, 66%);
+  }
+  
+  .form-clean-button button:hover svg path,
+  .form-save-button button:hover svg path {
+    fill: hsl(225, 54%, 33%);
+  }
 
