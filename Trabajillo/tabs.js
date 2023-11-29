@@ -4,11 +4,12 @@ export default (() => {
     tabSelector.addEventListener('click', async (event) => {
 
         if (event.target.closest('.tab')) {
-            const tab = event.target.closest('.tab');
-            tab.classList.remove('active');
-            tab.classList.add('active');
+            const tabs = tabSelector.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            const clickedTab = event.target.closest('.tab');
+            clickedTab.classList.add('active');
         }
     });
-
    
 })();
