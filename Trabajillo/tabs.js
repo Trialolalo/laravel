@@ -1,15 +1,18 @@
 export default (() => {
     const tabSelector = document.querySelector(".tab-selector")
-    
+    const tabContents = document.querySelectorAll(".tab-content")
+   
     tabSelector.addEventListener('click', async (event) => {
 
         if (event.target.closest('.tab')) {
-            const tabs = tabSelector.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            const clickedTab = event.target.closest('.tab');
-            clickedTab.classList.add('active');
+            const tab = event.target.closest('.tab');
+            tab.parentElement.querySelector('.active').classList.remove('active');
+            tab.classList.add('active');
+
+            tab.closest('section').querySelector(".tab-content.active").classList.remove('active');
+            tab.closest('section').querySelector(`.tab-content[data-tab="${tab.dataset.tab}"]`).classList.add('active')
         }
     });
+
    
-})();
+})(); 

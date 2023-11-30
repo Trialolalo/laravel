@@ -220,12 +220,12 @@
                 <section class="form">
                     <div class="tabs">
                         <div class="tab-selector">
-                            <div class="tab">
+                            <div class="tab active" data-tab="main">
                                 <button>
                                     Principal
                                 </button>
                             </div>
-                            <div class="tab">            
+                            <div class="tab" data-tab="images">            
                                 <button>
                                     Imágenes
                                 </button>
@@ -245,47 +245,63 @@
                         </div>
                     </div>
                     <form action=""> 
-                        <div class="form-row">
-                            <div class="form-element">
-                                <div class="form-element-label">
-                                    <label>
-                                        Nombre
-                                    </label>
+                        <div class="tab-content active" data-tab="main">
+                            <div class="form-row">
+                                <div class="form-element">
+                                    <div class="form-element-label">
+                                        <label>
+                                            Nombre
+                                        </label>
+                                    </div>
+                                    <div class="form-element-input">
+                                        <input class="validate" name="submitted-name" autocomplete="name" data-onlyletters="true" />
+                                    </div>
                                 </div>
-                                <div class="form-element-input">
-                                    <input name="submitted-name" autocomplete="name" />
+                                <div class="form-element">
+                                    <div class="form-element-label">
+                                        <label>
+                                            Email
+                                        </label>
+                                    </div>
+                                    <div class="form-element-input">
+                                        <input name="submitted-name" autocomplete="name" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-element">
-                                <div class="form-element-label">
-                                    <label>
-                                        Email
-                                    </label>
+                            <div class="form-row">
+                                <div class="form-element">
+                                    <div class="form-element-label">
+                                        <label>
+                                            Password
+                                        </label>
+                                    </div>
+                                    <div class="form-element-input">
+                                        <input class="validate" data-minlength="8" type="password" name="submitted-name" autocomplete="name" />
+                                    </div>
                                 </div>
-                                <div class="form-element-input">
-                                    <input name="submitted-name" autocomplete="name" />
+                                <div class="form-element">
+                                    <div class="form-element-label">
+                                        <label>
+                                            Confirm Password
+                                        </label>
+                                    </div>
+                                    <div class="form-element-input">
+                                        <input name="submitted-name" autocomplete="name" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-element">
-                                <div class="form-element-label">
-                                    <label>
-                                        Password
-                                    </label>
-                                </div>
-                                <div class="form-element-input">
-                                    <input name="submitted-name" autocomplete="name" />
-                                </div>
-                            </div>
-                            <div class="form-element">
-                                <div class="form-element-label">
-                                    <label>
-                                        Confirm Password
-                                    </label>
-                                </div>
-                                <div class="form-element-input">
-                                    <input name="submitted-name" autocomplete="name" />
+                        <div class="tab-content" data-tab="images">
+                            <div class="form-row">
+                                <div class="form-element">
+                                    <div class="form-element-label">
+                                        <label>
+                                            Avatar
+                                        </label>
+                                    </div>
+                                    <div class="form-element-input">
+                                        <input type="file" />
+                                    </div>
                                 </div>
                             </div>
                         </div>

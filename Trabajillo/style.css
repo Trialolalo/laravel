@@ -438,15 +438,18 @@ label{
 .form-element-input textarea{
     background-color: hsl(0, 0%, 100%);
     width: 100%;
-    border: none;
 }
 
 input{
     box-sizing: border-box;
     padding: 0.5rem;
-    outline: auto;
     width: 100%;
     height: 2rem;
+}
+
+.validate.active{
+  border-color: hsl(0, 100%, 50%);
+  border-width: 0.25rem;
 }
 
 .tabs{
@@ -525,4 +528,12 @@ input{
     fill: hsl(225, 54%, 33%);
 }
 
+.tab-content{
+  visibility: hidden;
+  display: none;
+}
 
+.tab-content.active{
+  visibility: visible;
+  display: block;
+}
