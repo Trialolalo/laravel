@@ -21,21 +21,32 @@ export default (() => {
         if(event.target.closest('.validate')){
             const validate = event.target.closest('.validate');
 
+            
             if(validate.dataset.minlength){
                 let text = validate.value;
 
                 if(text.length < validate.dataset.minlength) {
                     validate.classList.add('active');
+
+                    if (text.length == 0) {
+                        validate.classList.remove('active');
+                    }
                 }
                 else {
                     validate.classList.remove('active');
+
                 }
             }
+               
 
             if(validate.dataset.onlyletters){
                 event.target.value = event.target.value.replace(/[^A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]/g, '');
             }
            
+            if(validate.dataset.mail){
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                
+            }
         }
     })
     
