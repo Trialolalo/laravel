@@ -49,15 +49,7 @@ button{
     z-index: 1001;
 }
 
-.logo{
-    fill: hsl(219, 79%, 66%);
-    width: 3rem;
-}
 
-.logo svg{
-    fill: hsl(0, 0%, 100%);
-    width: 5rem;
-}
 
 .burger-menu{
     width: 5%;
