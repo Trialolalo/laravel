@@ -2,6 +2,7 @@
     display: flex;
     background-color: hsl(0, 0%, 100%);
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin-bottom: 1rem;
 }
@@ -20,7 +21,6 @@
     background-color: hsl(225, 54%, 33%);
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 1rem;
-    padding: 1rem;
     height: 100%;
     cursor: pointer;
     box-sizing: border-box;
@@ -38,28 +38,63 @@
     display: flex;
     gap: 0.5rem;
     justify-content: flex-end;
-    align-items: center;
-    padding: 0.5rem;
+    box-sizing: border-box;
   }
   
   .form-clean-button button,
-  .form-save-button button {
-    border: none;
-    background: none;
-  }
+  .tabs{
+    display: flex;
+    background-color: hsl(0, 0%, 100%);
+    justify-content: space-between;
+    width: 100%;
+}
 
-  .form-clean-button button svg,
-  .form-save-button button svg {
-    width: 2rem;
-  }
-  
-  .form-clean-button button svg path,
-  .form-save-button button svg path {
-    fill: hsl(219, 79%, 66%);
-  }
-  
-  .form-clean-button button:hover svg path,
-  .form-save-button button:hover svg path {
-    fill: hsl(225, 54%, 33%);
-  }
+.tab-selector{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    align-items: center;
+    width: 100%;
+}
+
+.tab.active{
+    background-color: hsl(225, 54%, 33%);
+    height: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.tab.active button{
+  color: hsl(0, 0%, 100%);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.tab{
+  background-color: transparent;
+  height: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.tab button{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  background: transparent;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.tab-content{
+  visibility: hidden;
+  display: none;
+}
+
+.tab-content.active{
+  visibility: visible;
+  display: block;
+}
 

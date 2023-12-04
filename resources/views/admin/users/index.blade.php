@@ -35,7 +35,7 @@
                 <div class="table-edit">
                     <div class="pencil">
                         <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                         </button>
                     </div>
                     @component ('admin.components.destroy-button')
@@ -56,7 +56,7 @@
                 <div class="table-edit">
                     <div class="pencil">
                         <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                         </button>
                     </div>
                     @component ('admin.components.destroy-button')
@@ -76,7 +76,7 @@
                 <div class="table-edit">
                     <div class="pencil">
                         <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                         </button>
                     </div>
                     @component ('admin.components.destroy-button')
@@ -96,7 +96,7 @@
                 <div class="table-edit">
                     <div class="pencil">
                         <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                         </button>
                     </div>
                     @component ('admin.components.destroy-button')
@@ -114,19 +114,23 @@
     </div>
     
     <div class="table-pagination">
-        <span>{{ __('admin/pagination.total') }}</span>
+        <span>{{trans_choice('admin/pagination.total',  0, ['count' => 0])}}</span>
     </div>
 @endsection
 
 @section('form')
 <div class="tabs">
     <div class="tab-selector">
-        <button class="tab-principal">
-            Principal
-        </button>             
-        <button class="tab-imagenes">
-            Imágenes
-        </button>
+        <div class="tab active" data-tab="main">
+            <button>
+                Principal
+            </button>
+        </div>
+        <div class="tab" data-tab="images">            
+            <button>
+                Imágenes
+            </button>
+        </div> 
     </div>
     <div class="form-buttons">
         <div class="form-clean-button">
@@ -143,50 +147,63 @@
 </div>
 
 <form action=""> 
-    <div class="form-row">
-        <div class="form-element">
-            <div class="form-element-label">
-                <label>
-                    Nombre
-                </label>
+    <div class="tab-content active" data-tab="main">
+        <div class="form-row">
+            <div class="form-element">
+                <div class="form-element-label">
+                    <label>
+                        Nombre
+                    </label>
+                </div>
+                <div class="form-element-input">
+                    <input class="validate" name="submitted-name" autocomplete="name" data-onlyletters="true" />
+                </div>
             </div>
-            <div class="form-element-input">
-                <input name="submitted-name" autocomplete="name" />
+            <div class="form-element">
+                <div class="form-element-label">
+                    <label>
+                        Email
+                    </label>
+                </div>
+                <div class="form-element-input">
+                    <input class="validate" data-mail="true" name="submitted-name" autocomplete="name" />
+                </div>
             </div>
         </div>
-
-        <div class="form-element">
-            <div class="form-element-label">
-                <label>
-                    Email
-                </label>
+        <div class="form-row">
+            <div class="form-element">
+                <div class="form-element-label">
+                    <label>
+                        Password
+                    </label>
+                </div>
+                <div class="form-element-input">
+                    <input class="validate" data-minlength="8" type="password" name="submitted-name" autocomplete="name" />
+                </div>
             </div>
-            <div class="form-element-input">
-                <input name="submitted-name" autocomplete="name" />
+            <div class="form-element">
+                <div class="form-element-label">
+                    <label>
+                        Confirm Password
+                    </label>
+                </div>
+                <div class="form-element-input">
+                    <input name="submitted-name" autocomplete="name" />
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="form-row">
-        <div class="form-element">
-            <div class="form-element-label">
-                <label>
-                    Password
-                </label>
-            </div>
-            <div class="form-element-input">
-                <input name="submitted-name" autocomplete="name" />
-            </div>
-        </div>
-
-        <div class="form-element">
-            <div class="form-element-label">
-                <label>
-                    Confirm Password
-                </label>
-            </div>
-            <div class="form-element-input">
-                <input name="submitted-name" autocomplete="name" />
+    <div class="tab-content" data-tab="images">
+        <div class="form-row">
+            <div class="form-element">
+                <div class="form-element-label">
+                    <label>
+                        Avatar
+                    </label>
+                </div>
+                <div class="form-element-input">
+                    <input type="file" />
+                </div>
             </div>
         </div>
     </div>

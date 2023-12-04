@@ -2,6 +2,6 @@
 
 return [
 
-    'total' => 'Registros que hay en total.',
-
+    'total' => '{0} No hay registros|{1} :count registro en total|[2,*] :count registros en total',
+     
 ];

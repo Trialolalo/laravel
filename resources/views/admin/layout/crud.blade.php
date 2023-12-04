@@ -10,9 +10,9 @@
             @yield('table')
         </div>
 
-        <div class="form">
+        <section class="form">
             @yield('form')
-        </div>
+        </section>
 
     </div>
 @endsection
