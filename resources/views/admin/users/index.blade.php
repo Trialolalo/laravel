@@ -114,7 +114,7 @@
     </div>
     
     <div class="table-pagination">
-        <span>{{trans_choice('admin/pagination.total',  0, ['count' => 0])}}</span>
+        <span>{{trans_choice('admin/pagination.total',  1, ['count' => 1])}}</span>
     </div>
 @endsection
 
