@@ -21,7 +21,7 @@ class UserRequest extends FormRequest
     {
       return [
         'name' => 'required|min:3|max:64|regex:/^[a-z0-9áéíóúàèìòùäëïöüñ\s]+$/i',
-        'email' => ['required','email','max:255', Rule::unique('users')->ignore($this->id)],
+        'email' => ['required','email','max:255', Rule::unique('users')->ignore($this->id)->whereNull('deleted_at')],
         'password' => 'required_without:id',
         'password_confirmation' => 'required_without:id|same:password'
       ];

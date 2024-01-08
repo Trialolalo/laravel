@@ -4,3 +4,4 @@ import './filter.js';
 import './table.js';
 import './form.js';
 import './tabs.js';
+import './destroy-modal.js';

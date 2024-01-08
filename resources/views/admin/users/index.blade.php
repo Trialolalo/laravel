@@ -96,6 +96,8 @@
     </div>
 
     <form class="admin-form"> 
+        <input name="id"  type="hidden" value="{{$user->id ?? ''}}">
+
         <div class="tab-content active" data-tab="main">
             <div class="form-row">
                 <div class="form-element">

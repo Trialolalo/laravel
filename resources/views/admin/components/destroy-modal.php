@@ -1,15 +1,15 @@
-<div class="trash-modal">
-    <div class="trash-window">
+<div class="modal-destroy">
+    <div class="destroy-window">
         <h3>
             ¿Quiere eliminar el registro?
         </h3>
         <div class="form-row">
-            <div class="button-confirmation">
+            <div class="confirmation-button">
                 <button>
                     Si
                 </button>
             </div>
-            <div class="button-cancelation">
+            <div class="cancel-button">
                 <button>
                     No
                 </button>
