@@ -46,9 +46,9 @@ Route::group(['prefix' => 'admin'], function () {
     ]
   ]);
 
-  Route::resource('languages', 'App\Http\Controllers\Admin\LanguageController', [
+  Route::resource('idiomas', 'App\Http\Controllers\Admin\LanguageController', [
     'parameters' => [
-      'languages' => 'language', 
+      'idiomas' => 'language', 
     ],
     'names' => [
       'index' => 'languages',
@@ -56,6 +56,32 @@ Route::group(['prefix' => 'admin'], function () {
       'edit' => 'languages_edit',
       'store' => 'languages_store',
       'destroy' => 'languages_destroy',
+    ]
+  ]);
+
+  Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
+    'parameters' => [
+      'faqs' => 'faq', 
+    ],
+    'names' => [
+      'index' => 'faqs',
+      'create' => 'faqs_create',
+      'edit' => 'faqs_edit',
+      'store' => 'faqs_store',
+      'destroy' => 'faqs_destroy',
+    ]
+  ]);
+
+  Route::resource('datos-web', 'App\Http\Controllers\Admin\BusinessProfileController', [
+    'parameters' => [
+      'datos-web' => 'businessProfile', 
+    ],
+    'names' => [
+      'index' => 'business_profiles',
+      'create' => 'business_profiles_create',
+      'edit' => 'business_profiles_edit',
+      'store' => 'business_profiles_store',
+      'destroy' => 'business_profiles_destroy',
     ]
   ]);
 

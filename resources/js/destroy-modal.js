@@ -33,9 +33,7 @@ export default (() => {
             modalDestroy.classList.remove('active');
     
             const json = await response.json();
-  
-            console.log(json)
-  
+    
             document.dispatchEvent(new CustomEvent('refreshForm', {
               detail: {
                 form: json.form,
