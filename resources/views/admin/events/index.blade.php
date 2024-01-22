@@ -53,13 +53,13 @@
                     </div>
                     <div class="table-info">
                         <ul>
-                            <li>Event: {{ $event_element->name }}</li>
-                            <li>Address: {{ $event_element->address }}</li>
-                            <li>Price: {{ $event_element->price }}</li>
-                            <li>Start Date: {{ $event_element->startDate }}</li>
-                            <li>End Date: {{ $event_element->endDate }}</li>
-                            <li>Start Time: {{ $event_element->startTime }}</li>
-                            <li>End Time: {{ $event_element->endTime }}</li>
+                            <li>Evento: {{ $event_element->name }}</li>
+                            <li>Dirección: {{ $event_element->address }}</li>
+                            <li>Precio: {{ $event_element->price }}</li>
+                            <li>Día de inicio: {{ $event_element->start_date }}</li>
+                            <li>Día de finalización: {{ $event_element->end_date }}</li>
+                            <li>Hora de inicio: {{ $event_element->start_time }}</li>
+                            <li>Hora de finalización: {{ $event_element->end_time }}</li>
                             <li>Creado el: {{ $event_element->created_at }}</li>
                             <li>Actualizado el: {{ $event_element->updated_at }}</li>
                         </ul>
@@ -117,6 +117,21 @@
                         <input class="validate" name="name" autocomplete="name" data-onlyletters="true" value="{{$event->name ?? ''}}" />
                     </div>
                 </div>
+                <div class="form-element">
+                    <div class="form-element-label">
+                        <label>
+                            Población
+                        </label>
+                    </div>
+                    <div class="form-element-input">
+                        <select id="town_id" name="town_id">
+                            <option value=""></option>
+                            @foreach($towns as $town)
+                                <option value="{{$town->id}}" {{$town->id == $event->town_id ? 'selected' : ''}}>{{$town->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-element">
@@ -126,7 +141,7 @@
                         </label>
                     </div>
                     <div class="form-element-input">
-                        <input class="validate" type="date" name="startDate" autocomplete="name" data-onlyletters="true" value="{{$event->startDate ?? ''}}" />
+                        <input class="validate" type="date" name="start_date" autocomplete="name" data-onlyletters="true" value="{{$event->start_date ?? ''}}" />
                     </div>
                 </div>
                 <div class="form-element">
@@ -136,7 +151,7 @@
                         </label>
                     </div>
                     <div class="form-element-input">
-                        <input class="validate" type="date" name="endDate" value="{{$event->endDate ?? ''}}" autocomplete="name" />
+                        <input class="validate" type="date" name="end_date" value="{{$event->end_date ?? ''}}" autocomplete="name" />
                     </div>
                 </div>
             </div>
@@ -148,7 +163,7 @@
                         </label>
                     </div>
                     <div class="form-element-input">
-                        <input class="validate" type="time" name="startTime" data-onlyletters="true" value="{{$event->startTime ?? ''}}"/>
+                        <input class="validate" type="time" name="start_time" data-onlyletters="true" value="{{$event->start_time ?? ''}}"/>
                     </div>
                 </div>
                 <div class="form-element">
@@ -158,7 +173,7 @@
                         </label>
                     </div>
                     <div class="form-element-input">
-                        <input class="validate" type="time" data-mail="true" name="endTime" value="{{$event->endTime ?? ''}}"/>
+                        <input class="validate" type="time" data-mail="true" name="end_time" value="{{$event->end_time ?? ''}}"/>
                     </div>
                 </div>
             </div>

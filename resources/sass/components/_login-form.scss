@@ -1,0 +1,90 @@
+body{
+  background-color: hsl(195, 50%, 79%);
+  margin: 0 auto;
+  width: 30%;
+  top: 50vh;
+}
+
+.logo svg{
+  fill: hsl(0, 0%, 100%);
+  width: 8rem;
+  padding: 2rem;
+  margin-left: 17vh;
+}
+
+.container{
+  display: flex;
+  gap: 3rem;
+}
+
+.form{
+  flex: 2;
+}
+
+.form-row{
+  display: flex;
+  gap: 1rem;
+}
+
+.log-element{
+  flex: 1;
+}
+
+.log-element-label{
+  padding: 0.2rem;
+}
+
+label{
+  font-size: large;
+  border: none;
+  padding: 2rem 0rem;
+  font-family: $font-stack-condensed;
+  font-weight: 700;
+}
+
+.log-element-input{
+  margin-bottom: 1rem;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.log-element-input textarea{
+  background-color: hsl(0, 0%, 100%);
+  width: 100%;
+  border: none;
+}
+
+.log-menu{
+  width: 5rem;
+  margin-left: auto;
+  width: 40%;
+  
+}
+
+.log-row{
+  display: flex;
+  justify-content:space-evenly;
+}
+
+.recover{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+}
+
+.button-log-in button{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(0, 0%, 100%);
+  background-color: $primary-color;
+  padding: 1rem;
+  cursor: pointer;
+  width: 5rem;
+}
+
+input, select{
+  box-sizing: border-box;
+  padding: 0.5rem;
+  outline: auto;
+  width: 100%;
+}
+

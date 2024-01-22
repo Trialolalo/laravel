@@ -14,37 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::group(['prefix' => 'admin'], function () {
-
-    Route::resource('usuarios', 'App\Http\Controllers\Admin\UserController', [
-    'parameters' => [
-      'usuarios' => 'user', 
-    ],
-    'names' => [
-      'index' => 'users',
-      'create' => 'users_create',
-      'edit' => 'users_edit',
-      'store' => 'users_store',
-      'destroy' => 'users_destroy',
-    ]
-  ]);
-
-    Route::resource('eventos', 'App\Http\Controllers\Admin\EventController', [
-    'parameters' => [
-      'eventos' => 'event', 
-    ],
-    'names' => [
-      'index' => 'events',
-      'create' => 'events_create',
-      'edit' => 'events_edit',
-      'store' => 'events_store',
-      'destroy' => 'events_destroy',
-    ]
-  ]);
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
   Route::resource('idiomas', 'App\Http\Controllers\Admin\LanguageController', [
     'parameters' => [
@@ -59,29 +29,29 @@ Route::group(['prefix' => 'admin'], function () {
     ]
   ]);
 
-  Route::resource('faqs', 'App\Http\Controllers\Admin\FaqController', [
+  Route::resource('usuarios', 'App\Http\Controllers\Admin\UserController', [
     'parameters' => [
-      'faqs' => 'faq', 
+      'usuarios' => 'user', 
     ],
     'names' => [
-      'index' => 'faqs',
-      'create' => 'faqs_create',
-      'edit' => 'faqs_edit',
-      'store' => 'faqs_store',
-      'destroy' => 'faqs_destroy',
+      'index' => 'users',
+      'create' => 'users_create',
+      'edit' => 'users_edit',
+      'store' => 'users_store',
+      'destroy' => 'users_destroy',
     ]
   ]);
 
-  Route::resource('datos-web', 'App\Http\Controllers\Admin\BusinessProfileController', [
+  Route::resource('eventos', 'App\Http\Controllers\Admin\EventController', [
     'parameters' => [
-      'datos-web' => 'businessProfile', 
+      'eventos' => 'event', 
     ],
     'names' => [
-      'index' => 'business_profiles',
-      'create' => 'business_profiles_create',
-      'edit' => 'business_profiles_edit',
-      'store' => 'business_profiles_store',
-      'destroy' => 'business_profiles_destroy',
+      'index' => 'events',
+      'create' => 'events_create',
+      'edit' => 'events_edit',
+      'store' => 'events_store',
+      'destroy' => 'events_destroy',
     ]
   ]);
 
@@ -90,4 +60,4 @@ Route::group(['prefix' => 'admin'], function () {
   Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';

@@ -37,7 +37,7 @@
        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
       <!-- Enlazamos con la página de CSS -->
-      @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+      @vite(['resources/sass/admin-app.scss', 'resources/js/admin-app.js'])
       
     </head>
 

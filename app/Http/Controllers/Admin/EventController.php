@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Http\Requests\Admin\EventRequest;
-use Debugbar;
 
 class EventController extends Controller
 {
