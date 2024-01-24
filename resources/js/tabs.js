@@ -1,18 +1,33 @@
 export default (() => {
-    const tabSelector = document.querySelector(".tab-selector")
-    const tabContents = document.querySelectorAll(".tab-content")
+    // const tabSelectors = document.querySelectorAll(".tab-selector")
+
+    // tabSelectors.forEach( tabSelector => {
+    //     tabSelector.addEventListener('click', async (event) => {
+
+    //         if (event.target.closest('.tab')) {
+    //             const tab = event.target.closest('.tab');
+    //             tab.parentElement.querySelector('.active').classList.remove('active');
+    //             tab.classList.add('active');
+    
+    //             tab.closest('section').querySelector(".tab-content.active").classList.remove('active');
+    //             tab.closest('section').querySelector(`.tab-content[data-tab="${tab.dataset.tab}"]`).classList.add('active')
+    //         }
+    //     });
+    // })
    
-    tabSelector.addEventListener('click', async (event) => {
+    const form = document.querySelector(".form");
 
+    form.addEventListener('click', (event)=>{
         if (event.target.closest('.tab')) {
-            const tab = event.target.closest('.tab');
-            tab.parentElement.querySelector('.active').classList.remove('active');
+            // alert('hola');
+            let tab =  event.target.closest('.tab')
+            
+            tab.parentNode.querySelector('.active').classList.remove('active');
             tab.classList.add('active');
-
-            tab.closest('section').querySelector(".tab-content.active").classList.remove('active');
-            tab.closest('section').querySelector(`.tab-content[data-tab="${tab.dataset.tab}"]`).classList.add('active')
+            console.log(tab.dataset.tab);
+            document.querySelector(`[data-tab = "${tab.dataset.tab}"]`).classList.add('active');
         }
-    });
+    })
 
    
 })(); 

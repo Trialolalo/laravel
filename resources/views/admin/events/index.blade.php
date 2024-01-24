@@ -78,14 +78,14 @@
     <div class="tabs">
         <div class="tab-selector">
             <div class="tab active" data-tab="main">
-                <button>
+                <span>
                     Principal
-                </button>
+                </span>
             </div>
             <div class="tab" data-tab="images">            
-                <button>
+                <span>
                     Imágenes
-                </button>
+                </span>
             </div> 
         </div>
         <div class="form-buttons">
@@ -199,6 +199,41 @@
                     </div>
                 </div>
             </div>
+            <div class="tabs">
+                <div class="tab-selector">
+                    @foreach($languages as $language)      
+                        <div class="tab {{ $loop->first ? 'active' : '' }}" data-tab="{{$language->label}}">
+                            <span>
+                                {{$language->label}}
+                            </span>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            @foreach($languages as $language)      
+                <div class="tab-content {{ $loop->first ? 'active' : '' }}" data-tab="{{$language->label}}">
+                    <div class="form-element">
+                        <div class="form-element-label">
+                            <label>
+                                Título
+                            </label>
+                        </div>
+                        <div class="form-element-input">
+                            <input class="validate" data-minlength="8" type="text" name="title" autocomplete="name" value="{{$event->title ?? ''}}" />
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-element-label">
+                            <label>
+                                Descripción
+                            </label>
+                        </div>
+                        <div class="form-element-input">
+                            <textarea name="description" autocomplete="name" value="{{$event->description ?? ''}}"></textarea>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
         <div class="tab-content" data-tab="images">
             <div class="form-row">
