@@ -24,26 +24,36 @@ class LocaleService
   public function store($locale, $entity_id)
   {  
 
-    foreach ($locale as $name => $value){
-
+    foreach ($locale as $name => $value){ 
       $name = str_replace(['-', '_'], ".", $name); 
       $explode_name = explode('.', $name);
-      $language_alias = end($explode_name);
-      array_pop($explode_name); 
+      $language_alias = end($explode_name); 
+      array_pop($explode_name);  
       $key = implode(".", $explode_name); 
 
       $locale[] = $this->locale->updateOrCreate([
-        'name' => $name,
-        'language_alias' => $language_alias,
-        'entity_id' => $entity_id,
-        'entity' => $this->entity,
-        'key' => $key,
+        'name' => $name, 
+        'language_alias' => $language_alias, 
+        'entity_id' => $entity_id, 
+        'entity' => $this->entity, 
+        'key' => $key, 
       ],[
         'value' => $value,
       ]);
     }
 
     return $locale;
+  }
+
+  public function parseLocales($entity)
+  {
+    $locales = $entity->locales()->pluck('value', 'name')->all();
+
+    foreach ($locales as $name => $value) {
+      $entity->$name = $value;
+    }
+
+    return $entity;
   }
 
   public function show($entity_id)

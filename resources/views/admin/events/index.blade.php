@@ -54,7 +54,7 @@
                     <div class="table-info">
                         <ul>
                             <li>Evento: {{ $event_element->name }}</li>
-                            <li>Dirección: {{ $event_element->address }}</li>
+                            <li>Población: {{ $event_element->town->name }}</li>
                             <li>Precio: {{ $event_element->price }}</li>
                             <li>Día de inicio: {{ $event_element->start_date }}</li>
                             <li>Día de finalización: {{ $event_element->end_date }}</li>
@@ -219,7 +219,7 @@
                             </label>
                         </div>
                         <div class="form-element-input">
-                            <input class="validate" data-minlength="8" type="text" name="locale['title.{{$language->label}}']" value="{{$event->title ?? ''}}" />
+                            <input class="validate" data-minlength="8" type="text" name="locale[title.{{$language->label}}]" value="{{$event['title.'.$language->label] ?? ''}}" />
                         </div>
                     </div>
                     <div class="form-element">
@@ -229,7 +229,7 @@
                             </label>
                         </div>
                         <div class="form-element-input">
-                            <textarea name="locale['description.{{$language->label}}']" value="{{$event->description ?? ''}}"></textarea>
+                            <textarea name="locale[description.{{$language->label}}]" >{{$event['description.'.$language->label] ?? ''}}</textarea>
                         </div>
                     </div>
                 </div>
